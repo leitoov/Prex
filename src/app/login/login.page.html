@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-button class="btn-login">Something are wrong!</ion-button>
+  <ion-card>
+    <img src="../../assets/icon/logo.png">
+    <ion-card-content>
+      <form [formGroup]="FormLogin" (ngSubmit)="saveData()" novalidate >
+        <ion-input formControlName="name" type="text" placeholder="Username"></ion-input>
+        <div *ngIf="FormLogin.get('name').errors && FormLogin.get('name').dirty">
+          <p *ngIf="FormLogin.get('name').hasError('required')">Please enter username!</p>
+        </div>
+        <ion-input  #passwordEyeRegister  [type]="passwordTypeInput" formControlName="password" placeholder="Password">
+          <ion-icon  [name]="iconpassword" (click)="togglePasswordMode()"></ion-icon>
+        </ion-input>
+        <div *ngIf="FormLogin.get('password').errors && FormLogin.get('password').dirty">
+          <p *ngIf="FormLogin.get('password').hasError('required')">Please enter Password!</p>
+        </div>
+        <ion-button type="submit" [disabled]="FormLogin.invalid" class="login">Login</ion-button>
+        <div class="text mt-3" routerLink="/new-account">
+          Create account
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="text">Forgot password?</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+
+
+
+
+  

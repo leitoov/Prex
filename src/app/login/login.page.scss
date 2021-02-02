@@ -1,0 +1,47 @@
+ion-card{
+    text-align: center;
+    box-shadow:none;
+    top: 9%;
+}
+ion-input{
+    --color: #ffffff;
+    display: flex;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 30px;
+    width: 100%;
+    margin-top: 23px;
+    font-size: 19px;
+
+}
+
+img{
+    border-radius: 65px;
+    width: 46%;
+    height: 153px;
+}
+.btn-login{
+    --background: #E50914;
+    display: flex;
+    margin: 3%;
+    --border-radius: 5px;
+    font-size: 19px;
+    font-weight: normal;
+    text-transform: none;
+}
+.text{
+    color: #ffffff;
+    text-align: center;
+    font-size: 17px;
+}
+.mt-3{
+    margin-top:11px;
+}
+.login{
+    --border-radius: 30px;
+    --background: rgb(129, 129, 129);
+    margin-top: 12%;
+    font-size: 19px;
+    width: 100%;
+}
+

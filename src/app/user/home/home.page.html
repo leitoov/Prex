@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu>
+    </ion-menu>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="text" *ngFor="let post of arrayPosts">
+    <div class="container" (click)="Openedit(post.id)">
+      <div class="caja">
+        <img class="img" src="{{post.img}}" />
+      </div>
+      <div class="caja red">
+        <div class="title">{{post.movies}}</div>
+        <p>{{post.description}}<p> 
+        <div class="rate">
+          <div *ngIf="post.rate == 1">
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </div>
+          <div *ngIf="post.rate == 2">
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </div>
+          <div *ngIf="post.rate == 3">
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </div>
+          <div *ngIf="post.rate == 4">
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </div>
+          <div *ngIf="post.rate == 5">
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+            <ion-icon class="star" name="star"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="caja redD"  id="{{post.id}}">
+        Edit
+      </div>
+    </div>
+  </div>
+</ion-content>

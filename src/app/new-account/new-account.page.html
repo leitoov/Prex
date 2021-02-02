@@ -1,0 +1,37 @@
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <H1 class="btn-login">Create new account!</H1>
+      <form [formGroup]="Formaccount" (ngSubmit)="saveData()" novalidate >
+        <ion-input formControlName="name" type="text" placeholder="Name"></ion-input>
+        <div *ngIf="Formaccount.get('name').errors && Formaccount.get('name').dirty">
+          <p *ngIf="Formaccount.get('name').hasError('required')">Please enter Name!</p>
+        </div>
+        
+        <ion-input formControlName="last_name" type="text" placeholder="Last name"></ion-input>
+        <div *ngIf="Formaccount.get('last_name').errors && Formaccount.get('last_name').dirty">
+          <p *ngIf="Formaccount.get('last_name').hasError('required')">Please enter Last name!</p>
+        </div>
+
+        <ion-input formControlName="username" type="text" placeholder="Username"></ion-input>
+        <div *ngIf="Formaccount.get('username').errors && Formaccount.get('username').dirty">
+          <p *ngIf="Formaccount.get('username').hasError('required')">Please enter Username!</p>
+        </div>
+
+        <ion-input  #passwordEyeRegister  [type]="passwordTypeInput" formControlName="password" placeholder="Password">
+          <ion-icon  [name]="iconpassword" (click)="togglePasswordMode()"></ion-icon>
+        </ion-input>
+        <div *ngIf="Formaccount.get('password').errors && Formaccount.get('password').dirty">
+          <p *ngIf="Formaccount.get('password').hasError('required')">Please enter Password!</p>
+        </div>
+
+        <ion-button type="submit" [disabled]="Formaccount.invalid" class="login">Login</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="text" routerLink="/login">Login</ion-title>
+  </ion-toolbar>
+</ion-footer>
